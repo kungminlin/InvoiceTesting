@@ -3,7 +3,7 @@
   "description": "",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.DocumentUnderstanding.ML.Activities": "[1.5.1]",
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.5.2]",
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.IntelligentOCR.Activities": "[4.10.1]",
     "UiPath.Mail.Activities": "[1.9.3]",
