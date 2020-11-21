@@ -7,7 +7,6 @@
     "UiPath.DocumentUnderstanding.ML.Activities": "[1.5.2]",
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.IntelligentOCR.Activities": "[4.10.2]",
-    "UiPath.Mail.Activities": "[1.9.3]",
     "UiPath.PDF.Activities": "[3.3.0]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.6]"
