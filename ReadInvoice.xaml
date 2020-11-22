@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReadInvoice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p5="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p8="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadInvoice" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p5="http://schemas.microsoft.com/workflow/2012/07/xaml/activities" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p8="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="document" Type="InArgument(x:String)" />
     <x:Property Name="data" Type="OutArgument(scg:IDictionary(x:String, x:Object))" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>837,1507</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1143,1547</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadInvoice_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -87,7 +87,6 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -217,7 +216,9 @@
           </p:IntelligentFormExtractor>
           <p4:MachineLearningExtractor SelectedMLSkill="{x:Null}" ApiKey="ofVSK1nyjg8au2wDcH+ktfWPmAOTwg0L6RT4l+TQiDKkaU6n1yNpa5055d0ku0KFgXLOrrnDz8/W7i7q0ANbVg==" Configuration="{}{&quot;Endpoint&quot;:&quot;https://invoices.uipath.com/?edition=enterprise&quot;,&quot;ApiKey&quot;:&quot;\&quot;F+dj0XLbhrdIddCt4KbjMJGNJ6mg9cBN50UmxqO1MuBx8kwfkeYyBpkDkpas3P9NkyB4TjI9fflO4gOeUa4yQw==\&quot;&quot;,&quot;AvailableMLSkills&quot;:[]}" DisplayName="Machine Learning Extractor" Endpoint="https://invoices.uipath.com/?edition=enterprise" sap:VirtualizedContainerService.HintSize="234,192" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_1" PersistenceId="UI6adf3868c75d465ebe5b6df114e58efe" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
             <p4:MachineLearningExtractor.AvailableMLSkills>
-              <sc:BindingList x:TypeArguments="x:String" AllowEdit="True" AllowNew="False" AllowRemove="True" RaiseListChangedEvents="True" />
+              <scg:List x:TypeArguments="x:String" Capacity="1">
+                <x:String>ml_extraction</x:String>
+              </scg:List>
             </p4:MachineLearningExtractor.AvailableMLSkills>
             <p4:MachineLearningExtractor.DocumentBounds>
               <InArgument x:TypeArguments="p2:ResultsDocumentBounds">
@@ -336,10 +337,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </p6:ClassifyDocumentScope>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID9" DisplayName="Classification Result" sap:VirtualizedContainerService.HintSize="111,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-          <FlowDecision.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="autoClassification.Length = 0" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID9" Condition="[autoClassification.Length = 0]" DisplayName="Classification Result" sap:VirtualizedContainerService.HintSize="111,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID1}" False="{x:Reference __ReferenceID0}">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -351,12 +349,6 @@
               <av:PointCollection x:Key="TrueConnector">244.5,770 170,770 170,1000 200,1000</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <FlowDecision.True>
-            <x:Reference>__ReferenceID1</x:Reference>
-          </FlowDecision.True>
-          <FlowDecision.False>
-            <x:Reference>__ReferenceID0</x:Reference>
-          </FlowDecision.False>
         </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
@@ -374,7 +366,7 @@
             <ActivityFunc.Argument>
               <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
             </ActivityFunc.Argument>
-            <ui:MicrosoftAzureComputerVisionOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ApiKey="c036b678cd094935a6e2ed842f1a738b" ComputeSkewAngle="False" DisplayName="Microsoft Azure Computer Vision OCR" Endpoint="https://kung1uipath2min.cognitiveservices.azure.com/" ExtractWords="True" HandwritingRecognition="True" sap:VirtualizedContainerService.HintSize="312,22" sap2010:WorkflowViewState.IdRef="MicrosoftAzureComputerVisionOCR_1" Image="[Image]" />
+            <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" />
           </ActivityFunc>
         </p8:DigitizeDocument.OCREngine>
         <sap:WorkflowViewStateService.ViewState>

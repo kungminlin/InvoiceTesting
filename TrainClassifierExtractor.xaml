@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TrainClassifierExtractor" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:p3="http://schemas.uipath.com/workflow/activities/intelligentocr/training" xmlns:p4="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TrainClassifierExtractor" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p1="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:p3="http://schemas.uipath.com/workflow/activities/intelligentocr/training" xmlns:p4="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="document" Type="InArgument(x:String)" />
     <x:Property Name="text" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
     <x:Property Name="confirmedData" Type="InArgument(p1:ExtractionResult)" />
     <x:Property Name="taxonomy" Type="InArgument(p2:DocumentTaxonomy)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>837,1044</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1143,1044</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -137,7 +137,9 @@
       <p3:TrainExtractorsScope.Trainables>
         <p4:MachineLearningExtractorTrainer SelectedMLSkill="{x:Null}" Configuration="{}{&quot;Endpoint&quot;:&quot;https://invoices.uipath.com&quot;,&quot;AvailableMLSkills&quot;:[]}" DisplayName="Machine Learning Extractor Trainer" Endpoint="https://invoices.uipath.com" sap:VirtualizedContainerService.HintSize="234,192" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_1" OutputFolder="DocumentProcessing\MachineLearning" PersistenceId="UIb397741df5a443979eff26683c490ec7">
           <p4:MachineLearningExtractorTrainer.AvailableMLSkills>
-            <sc:BindingList x:TypeArguments="x:String" AllowEdit="True" AllowNew="False" AllowRemove="True" RaiseListChangedEvents="True" />
+            <scg:List x:TypeArguments="x:String" Capacity="1">
+              <x:String>ml_extraction</x:String>
+            </scg:List>
           </p4:MachineLearningExtractorTrainer.AvailableMLSkills>
           <p4:MachineLearningExtractorTrainer.DocumentObjectModel>
             <InArgument x:TypeArguments="p:Document">
